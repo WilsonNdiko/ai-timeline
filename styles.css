@@ -1,0 +1,110 @@
+/* Basic Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f0f2f5;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Timeline container */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+/* Central line */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #4e54c8;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container */
+.container {
+  padding: 1rem 2rem;
+  position: relative;
+  width: 50%;
+}
+
+/* Content boxes */
+.content {
+  padding: 1rem;
+  background: white;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Left containers */
+.left {
+  left: 0;
+}
+
+/* Right containers */
+.right {
+  left: 50%;
+}
+
+/* Circles on the line */
+.container::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: -10px;
+  background-color: #4e54c8;
+  border: 4px solid #fff;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Adjust circles for right */
+.right::before {
+  left: -10px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  .container::before {
+    left: 50%;
+    margin-left: -10px;
+  }
+  .right {
+    left: 0;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #4e54c8;
+  color: white;
+  margin-top: 2rem;
+}
